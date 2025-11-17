@@ -4,7 +4,15 @@ require("dotenv").config();
 // 서버 개방
 const compression = require("compression");
 const express = require("express"); // express 프레임워크 객체 생성
+const cors = require("cors");
 const app = express(); // express의 새 인스턴스 할당
+
+// CORS 설정: http://localhost:3000からのリクエストを許可
+app.use(cors({
+  origin: 'http://localhost:3000', // React 클라이언트 주소
+  credentials: true, // 쿠키 등 자격 증명 허용
+}));
+
 app.use(compression()); // 보다 빠른 API 응답 위해 Express에서 JSON 같은 API 응답을 압축 실행
 const cookieParser = require("cookie-parser");
 
