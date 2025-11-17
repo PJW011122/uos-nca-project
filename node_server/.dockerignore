@@ -1,0 +1,4 @@
+#bcrypt 오류가 발생해서 제외 후 build
+node_modules
+npm-debug.log
+.env

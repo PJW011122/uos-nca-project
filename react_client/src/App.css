@@ -1,0 +1,45 @@
+body {
+  font-family: sans-serif;
+  background-color: #fff;
+  margin: 0;
+}
+
+.App {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.App-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 30px;
+  padding-bottom: 20px;
+  border-bottom: 1px solid #eee;
+}
+
+.App-header h1 {
+    margin: 0;
+    font-size: 28px;
+}
+
+.write-post-button {
+  background-color: #1877f2;
+  color: white;
+  border: none;
+  padding: 10px 15px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.write-post-button:hover {
+  background-color: #166fe5;
+}
+
+.post-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 25px;
+}

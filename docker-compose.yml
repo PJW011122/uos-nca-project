@@ -1,0 +1,15 @@
+services:
+  web:
+    container_name: "react_client"
+    build:
+      context: ./react_client # React 클라이언트 Dockerfile 경로
+      dockerfile: Dockerfile.client
+    image: nca2025-client:latest # 이미지 이름 명시
+    restart: "on-failure"
+  was:
+    container_name: "node_server"
+    build:
+      context: ./node_server # React 클라이언트 Dockerfile 경로
+      dockerfile: Dockerfile.server
+    image: nca2025-server:latest # 이미지 이름 명시
+    restart: "on-failure"
