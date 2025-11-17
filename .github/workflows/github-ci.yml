@@ -33,5 +33,7 @@ jobs:
 
       - name: Tag and push Docker images
         run: |
-          docker tag course-client:latest "${{ env.DOCKER_IMAGE }}:client-${{ github.ref_name }}"
+          docker tag nca2025-client:latest "${{ env.DOCKER_IMAGE }}:client-${{ github.ref_name }}"
           docker push "${{ env.DOCKER_IMAGE }}:client-${{ github.ref_name }}"
+          docker tag nca2025-server:latest "${{ env.DOCKER_IMAGE }}:server-${{ github.ref_name }}"
+          docker push "${{ env.DOCKER_IMAGE }}:server-${{ github.ref_name }}"
