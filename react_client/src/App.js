@@ -53,7 +53,7 @@ function App() {
     formData.append("image", newPostData.image); // The file object
 
     try {
-      const response = await fetch(`${API_URL}/board`, {
+      const response = await fetch(`/board`, {
         method: "POST",
         body: formData,
       });
