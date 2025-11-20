@@ -7,11 +7,7 @@ const express = require("express"); // express 프레임워크 객체 생성
 const cors = require("cors");
 const app = express(); // express의 새 인스턴스 할당
 
-// CORS 설정: http://localhost:3000からのリクエストを許可
-app.use(cors({
-  origin: 'http://localhost:3000', // React 클라이언트 주소
-  credentials: true, // 쿠키 등 자격 증명 허용
-}));
+app.use(cors());
 
 app.use(compression()); // 보다 빠른 API 응답 위해 Express에서 JSON 같은 API 응답을 압축 실행
 const cookieParser = require("cookie-parser");
@@ -22,7 +18,7 @@ app.use(express.json()); // parse requests of content-type - application/json
 app.use(express.urlencoded({ extended: true })); // parse requests of content-type - application/x-www-form-urlencoded
 
 // '/uploads' 경로로 들어오는 요청에 대해 '/data/uploads' 디렉토리의 정적 파일을 제공합니다.
-app.use('/uploads', express.static('/data/uploads'));
+app.use("/uploads", express.static("/data/uploads"));
 
 // MySQL과 연결
 const mySQL = require("./mysql_db/index.js");
