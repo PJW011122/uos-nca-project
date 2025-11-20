@@ -23,7 +23,7 @@ function App() {
       const formattedPosts = result.data.map(post => ({
         ...post,
         // post.image가 null이나 undefined가 아닐 경우에만 URL을 생성합니다.
-        image: post.image ? `${API_URL}/${post.image.replace(/\\/g, '/')}` : null
+        image: post.image ? (post.image.startsWith('http://') || post.image.startsWith('https://') ? post.image : `${API_URL}/${post.image.replace(/\\/g, '/')}`) : null
       }));
       setPosts(formattedPosts);
     } catch (error) {
