@@ -7,6 +7,7 @@ function PostCard({ post }) {
       <img src={post.image} alt={post.name} className="post-card-image" />
       <div className="post-card-body">
         <h2 className="post-card-title">{post.name}</h2>
+        <p className="post-card-description">{post.description}</p>
         <p className="post-card-price">{post.price.toLocaleString()}원</p>
       </div>
     </div>

@@ -20,7 +20,8 @@ function App() {
       // 서버에서 받은 이미지 경로에 서버 주소를 붙여서 완전한 URL로 만들어줍니다.
       const formattedPosts = result.data.map((post) => ({
         ...post,
-        // post.image가 null이나 undefined가 아닐 경우에만 URL을 생성합니다.
+        name: post.title, // Map title to name
+        description: post.content, // Map content to description
         image: post.image
           ? post.image.startsWith("http://") ||
             post.image.startsWith("https://")

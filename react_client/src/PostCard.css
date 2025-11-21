@@ -23,11 +23,29 @@
 .post-card-body {
   padding: 15px;
   text-align: left;
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
 }
 
 .post-card-title {
   font-size: 18px;
-  margin: 0 0 10px 0;
+  font-weight: 600;
+  margin: 0 0 8px 0;
+}
+
+.post-card-description {
+  font-size: 14px;
+  color: #666;
+  margin: 0 0 12px 0;
+  flex-grow: 1;
+  line-height: 1.4;
+  height: 2.8em; /* 2 lines (1.4em * 2) */
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 2; /* Limit to 2 lines */
+  -webkit-box-orient: vertical;
 }
 
 .post-card-price {
@@ -35,4 +53,5 @@
   color: #333;
   margin: 0;
   font-weight: bold;
+  margin-top: auto; /* Push price to the bottom */
 }
